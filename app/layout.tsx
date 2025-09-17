@@ -4,6 +4,7 @@ import '@/styles/bootstrap.min.css'
 import '@/styles/main.css'
 import 'swiper/css';
 
+
 import MainLayout from "@/components/shared/MainLayout";
 
 
@@ -31,11 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="body">
-          <MainLayout>
-            {children}
-          </MainLayout>
-        </div>
+        {children}
       </body>
     </html>
   );
