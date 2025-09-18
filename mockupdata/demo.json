@@ -1,0 +1,1266 @@
+{
+    "status": "success",
+    "message": "",
+    "data": {
+        "seoOnPage": {
+            "titleHead": "Dữ liệu phim vietsub miễn phí mới nhất. Cập nhật nhanh chóng, chất lượng cao và không quảng cáo",
+            "descriptionHead": "Website cung cấp phim miễn phí nhanh chất lượng cao. Phim online VietSub, Thuyết minh, lồng tiếng chất lượng Full HD. Nguồn phim vietsub chất lượng cao cập nhật nhanh nhất",
+            "og_type": "website",
+            "og_image": [
+                "/uploads/movies/ngay-khong-ngu-thumb.jpg",
+                "/uploads/movies/exit-8-ga-tau-vo-tan-thumb.jpg",
+                "/uploads/movies/hoa-giang-ho-chi-bat-luong-nhan-phan-1-thumb.jpg",
+                "/uploads/movies/phon-hoan-thumb.jpg",
+                "/uploads/movies/hoa-giang-ho-chi-bat-luong-nhan-phan-2-thumb.jpg",
+                "/uploads/movies/hoa-giang-ho-chi-bat-luong-nhan-phan-4-thumb.jpg",
+                "/uploads/movies/in-between-thumb.jpg",
+                "/uploads/movies/tay-phong-liet-liet-thumb.jpg",
+                "/uploads/movies/long-phuong-lenh-thumb.jpg",
+                "/uploads/movies/giao-nhan-de-de-cua-ta-thumb.jpg",
+                "/uploads/movies/bat-dau-voi-mot-ngon-nui-thumb.jpg",
+                "/uploads/movies/tu-thoi-hao-thumb.jpg",
+                "/uploads/movies/lam-on-dung-sung-toi-phan-5-thumb.jpg",
+                "/uploads/movies/khanh-khanh-nga-tam-thumb.jpg",
+                "/uploads/movies/song-the-sung-phi-2-thumb.jpg",
+                "/uploads/movies/song-the-sung-phi-3-thumb.jpg",
+                "/uploads/movies/ngoc-chieu-lenh-phan-2-thumb.jpg",
+                "/uploads/movies/ngoc-chieu-lenh-phan-1-thumb.jpg",
+                "/uploads/movies/tinh-yeu-nay-co-trong-sang-thumb.jpg",
+                "/uploads/movies/ngay-lap-voi-nguoi-thuong-thumb.jpg",
+                "/uploads/movies/ta-chinh-la-co-nuong-nhu-vay-thumb.jpg",
+                "/uploads/movies/tho-den-thumb.jpg",
+                "/uploads/movies/thieu-nu-dai-nhan-thumb.jpg",
+                "/uploads/movies/nu-the-tu-thumb.jpg"
+            ]
+        },
+        "items": [
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "279322",
+                    "season": null,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "id": "tt34607637",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T17:18:59.000Z"
+                },
+                "_id": "68ca3349973309bcbf914a69",
+                "name": "Ngày Không Ngủ",
+                "slug": "ngay-khong-ngu",
+                "origin_name": "Mobius",
+                "type": "series",
+                "thumb_url": "ngay-khong-ngu-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "45 phút/tập",
+                "episode_current": "Tập 7",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620a2249e0fc277084dfd2e5",
+                        "name": "Hình Sự",
+                        "slug": "hinh-su"
+                    },
+                    {
+                        "id": "620f3d2b91fa4af90ab697fe",
+                        "name": "Chính kịch",
+                        "slug": "chinh-kich"
+                    },
+                    {
+                        "id": "620f84d291fa4af90ab6b3f4",
+                        "name": "Bí ẩn",
+                        "slug": "bi-an"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "movie",
+                    "id": "1408208",
+                    "season": null,
+                    "vote_average": 6.105,
+                    "vote_count": 43
+                },
+                "imdb": {
+                    "id": "tt35222590",
+                    "vote_average": 6.6,
+                    "vote_count": 1102
+                },
+                "modified": {
+                    "time": "2025-09-18T16:31:03.000Z"
+                },
+                "_id": "68cbc9c8bb00ccbb08b321b9",
+                "name": "Exit 8: Ga Tàu Vô Tận",
+                "slug": "exit-8-ga-tau-vo-tan",
+                "origin_name": "Exit 8",
+                "type": "single",
+                "thumb_url": "exit-8-ga-tau-vo-tan-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "95 Phút",
+                "episode_current": "Full",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620a22ace0fc277084dfd531",
+                        "name": "Kinh Dị",
+                        "slug": "kinh-di"
+                    },
+                    {
+                        "id": "620f84d291fa4af90ab6b3f4",
+                        "name": "Bí ẩn",
+                        "slug": "bi-an"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "620a2307e0fc277084dfd726",
+                        "name": "Nhật Bản",
+                        "slug": "nhat-ban"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "83463",
+                    "season": 1,
+                    "vote_average": 8.4,
+                    "vote_count": 16
+                },
+                "imdb": {
+                    "id": "tt23038608",
+                    "vote_average": 0,
+                    "vote_count": 30
+                },
+                "modified": {
+                    "time": "2025-09-18T15:49:05.000Z"
+                },
+                "_id": "659ffbb77074f826ccc725ce",
+                "name": "Họa Giang Hồ Chi Bất Lương Nhân (Phần 1)",
+                "slug": "hoa-giang-ho-chi-bat-luong-nhan-phan-1",
+                "origin_name": "Họa Giang Hồ Chi Bất Lương Nhân (Phần 1)",
+                "type": "hoathinh",
+                "thumb_url": "hoa-giang-ho-chi-bat-luong-nhan-phan-1-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "15 phút/Tập",
+                "episode_current": "Hoàn Tất(54/54)",
+                "quality": "HD",
+                "lang": "Thuyết Minh",
+                "year": 2014,
+                "category": [
+                    {
+                        "id": "620a21b2e0fc277084dfd0c5",
+                        "name": "Hành Động",
+                        "slug": "hanh-dong"
+                    },
+                    {
+                        "id": "620a2279e0fc277084dfd3e1",
+                        "name": "Võ Thuật",
+                        "slug": "vo-thuat"
+                    },
+                    {
+                        "id": "620a2293e0fc277084dfd489",
+                        "name": "Phiêu Lưu",
+                        "slug": "phieu-luu"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "294468",
+                    "season": null,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "id": "",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:41:58.000Z"
+                },
+                "_id": "68cbc43c3e261817af03a33c",
+                "name": "Phồn Hoan",
+                "slug": "phon-hoan",
+                "origin_name": "Lust and Lies",
+                "type": "series",
+                "thumb_url": "phon-hoan-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "12 phút/tập",
+                "episode_current": "Tập 8",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620f3d2b91fa4af90ab697fe",
+                        "name": "Chính kịch",
+                        "slug": "chinh-kich"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "83463",
+                    "season": 2,
+                    "vote_average": 8.4,
+                    "vote_count": 16
+                },
+                "imdb": {
+                    "id": "tt23038608",
+                    "vote_average": 0,
+                    "vote_count": 30
+                },
+                "modified": {
+                    "time": "2025-09-18T15:41:48.000Z"
+                },
+                "_id": "659ffdb631d8a2b99e9a67aa",
+                "name": "Họa Giang Hồ Chi Bất Lương Nhân (Phần 2)",
+                "slug": "hoa-giang-ho-chi-bat-luong-nhan-phan-2",
+                "origin_name": "Họa Giang Hồ Chi Bất Lương Nhân (Phần 2)",
+                "type": "hoathinh",
+                "thumb_url": "hoa-giang-ho-chi-bat-luong-nhan-phan-2-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "20 phút/Tập",
+                "episode_current": "Tập 10",
+                "quality": "HD",
+                "lang": "Thuyết Minh",
+                "year": 2016,
+                "category": [
+                    {
+                        "id": "620a21b2e0fc277084dfd0c5",
+                        "name": "Hành Động",
+                        "slug": "hanh-dong"
+                    },
+                    {
+                        "id": "620a2279e0fc277084dfd3e1",
+                        "name": "Võ Thuật",
+                        "slug": "vo-thuat"
+                    },
+                    {
+                        "id": "620a2293e0fc277084dfd489",
+                        "name": "Phiêu Lưu",
+                        "slug": "phieu-luu"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "83463",
+                    "season": 4,
+                    "vote_average": 8.4,
+                    "vote_count": 16
+                },
+                "imdb": {
+                    "id": "tt23038608",
+                    "vote_average": 0,
+                    "vote_count": 30
+                },
+                "modified": {
+                    "time": "2025-09-18T15:36:33.000Z"
+                },
+                "_id": "65a16d3931d8a2b99ea21cd2",
+                "name": "Họa Giang Hồ Chi Bất Lương Nhân (Phần 4)",
+                "slug": "hoa-giang-ho-chi-bat-luong-nhan-phan-4",
+                "origin_name": "Họa Giang Hồ Chi Bất Lương Nhân (Phần 4)",
+                "type": "hoathinh",
+                "thumb_url": "hoa-giang-ho-chi-bat-luong-nhan-phan-4-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "30 phút/tập",
+                "episode_current": "Hoàn Tất(13/13)",
+                "quality": "HD",
+                "lang": "Thuyết Minh",
+                "year": 2021,
+                "category": [
+                    {
+                        "id": "620a2279e0fc277084dfd3e1",
+                        "name": "Võ Thuật",
+                        "slug": "vo-thuat"
+                    },
+                    {
+                        "id": "620a21b2e0fc277084dfd0c5",
+                        "name": "Hành Động",
+                        "slug": "hanh-dong"
+                    },
+                    {
+                        "id": "620a2293e0fc277084dfd489",
+                        "name": "Phiêu Lưu",
+                        "slug": "phieu-luu"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "movie",
+                    "id": "1477386",
+                    "season": null,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "id": "tt36537546",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:30:09.000Z"
+                },
+                "_id": "68cbbd1add2e6541d06278ba",
+                "name": "In Between",
+                "slug": "in-between",
+                "origin_name": "In Between",
+                "type": "single",
+                "thumb_url": "in-between-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "119 Phút",
+                "episode_current": "Full",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620f3d2b91fa4af90ab697fe",
+                        "name": "Chính kịch",
+                        "slug": "chinh-kich"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "6216607570b58bba6858b27c",
+                        "name": "Philippines",
+                        "slug": "philippines"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "226890",
+                    "season": 1,
+                    "vote_average": 6,
+                    "vote_count": 1
+                },
+                "imdb": {
+                    "id": "",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:29:44.000Z"
+                },
+                "_id": "64967680621029c05fe41b4d",
+                "name": "Tây Phong Lật Lật",
+                "slug": "tay-phong-liet-liet",
+                "origin_name": "Intrigue and Love",
+                "type": "series",
+                "thumb_url": "tay-phong-liet-liet-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "11 phút/tập",
+                "episode_current": "Hoàn tất (20/20)",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2023,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "228164",
+                    "season": 1,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "vote_average": 0,
+                    "vote_count": 0,
+                    "id": null
+                },
+                "modified": {
+                    "time": "2025-09-18T15:27:23.000Z"
+                },
+                "_id": "64882ad76231cbfdd956b536",
+                "name": "Long Phượng Lệnh",
+                "slug": "long-phuong-lenh",
+                "origin_name": "Dragon and Phoenix's Order",
+                "type": "series",
+                "thumb_url": "long-phuong-lenh-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "10 phút/tập",
+                "episode_current": "Hoàn tất (24/24)",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2023,
+                "category": [
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "231330",
+                    "season": 1,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "vote_average": 0,
+                    "vote_count": 0,
+                    "id": null
+                },
+                "modified": {
+                    "time": "2025-09-18T15:26:22.000Z"
+                },
+                "_id": "643a5d7a11f407ffb910f089",
+                "name": "Giao Nhân Đệ Đệ Của Ta",
+                "slug": "giao-nhan-de-de-cua-ta",
+                "origin_name": "My Merman Brother",
+                "type": "series",
+                "thumb_url": "giao-nhan-de-de-cua-ta-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "10 phút/tập",
+                "episode_current": "Hoàn tất (24/24)",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2023,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a2282e0fc277084dfd435",
+                        "name": "Viễn Tưởng",
+                        "slug": "vien-tuong"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "218676",
+                    "season": 1,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "id": "tt29521222",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:25:27.000Z"
+                },
+                "_id": "6404d0f30d15d31b770b5c99",
+                "name": "Bắt Đầu Với Một Ngọn Núi",
+                "slug": "bat-dau-voi-mot-ngon-nui",
+                "origin_name": "Go and Domain Your Game",
+                "type": "series",
+                "thumb_url": "bat-dau-voi-mot-ngon-nui-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "10 phút/tập",
+                "episode_current": "Hoàn Tất (30/30)",
+                "quality": "FHD",
+                "lang": "Vietsub",
+                "year": 2023,
+                "category": [
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    },
+                    {
+                        "id": "620a221de0fc277084dfd1c1",
+                        "name": "Hài Hước",
+                        "slug": "hai-huoc"
+                    },
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "219580",
+                    "season": 1,
+                    "vote_average": 3,
+                    "vote_count": 1
+                },
+                "imdb": {
+                    "id": "",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:24:01.000Z"
+                },
+                "_id": "64212b2683982600241ea2d5",
+                "name": "Tứ Thời Hảo",
+                "slug": "tu-thoi-hao",
+                "origin_name": "Yes, Her Majesty",
+                "type": "series",
+                "thumb_url": "tu-thoi-hao-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "10 phút/tập",
+                "episode_current": "Hoàn Tất (20/20)",
+                "quality": "FHD",
+                "lang": "Vietsub",
+                "year": 2023,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "155052",
+                    "season": 5,
+                    "vote_average": 10,
+                    "vote_count": 1
+                },
+                "imdb": {
+                    "vote_average": 0,
+                    "vote_count": 0,
+                    "id": null
+                },
+                "modified": {
+                    "time": "2025-09-18T15:19:06.000Z"
+                },
+                "_id": "640eb22d64004db3fee82b5c",
+                "name": "Làm Ơn Đừng Sủng Tôi Phần 5",
+                "slug": "lam-on-dung-sung-toi-phan-5",
+                "origin_name": "Please Don't Spoil Me S5",
+                "type": "series",
+                "thumb_url": "lam-on-dung-sung-toi-phan-5-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "15 phút/tập",
+                "episode_current": "Hoàn tất (27/27)",
+                "quality": "FHD",
+                "lang": "Vietsub",
+                "year": 2023,
+                "category": [
+                    {
+                        "id": "620a21b2e0fc277084dfd0c5",
+                        "name": "Hành Động",
+                        "slug": "hanh-dong"
+                    },
+                    {
+                        "id": "620a221de0fc277084dfd1c1",
+                        "name": "Hài Hước",
+                        "slug": "hai-huoc"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "129202",
+                    "season": null,
+                    "vote_average": 4.5,
+                    "vote_count": 2
+                },
+                "imdb": {
+                    "vote_average": 0,
+                    "vote_count": 0,
+                    "id": null
+                },
+                "modified": {
+                    "time": "2025-09-18T15:17:19.000Z"
+                },
+                "_id": "6239ef4e3d016a3b67188654",
+                "name": "Khanh Khanh Ngã Tâm",
+                "origin_name": "My Heart",
+                "type": "series",
+                "thumb_url": "khanh-khanh-nga-tam-thumb.jpg",
+                "time": "40 phút/tập",
+                "episode_current": "Hoàn Tất (24/24)",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "slug": "khanh-khanh-nga-tam",
+                "year": 2021,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ],
+                "sub_docquyen": false
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "72922",
+                    "season": 2,
+                    "vote_average": 6.2,
+                    "vote_count": 12
+                },
+                "imdb": {
+                    "id": "tt7514476",
+                    "vote_average": 7.4,
+                    "vote_count": 460
+                },
+                "modified": {
+                    "time": "2025-09-18T15:15:20.000Z"
+                },
+                "_id": "625d8b8fdb43524328aedf41",
+                "name": "Song Thế Sủng Phi 2",
+                "origin_name": "The Eternal Love 2",
+                "type": "series",
+                "thumb_url": "song-the-sung-phi-2-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "40 phút/tập",
+                "episode_current": "Hoàn Tất (30/30)",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "slug": "song-the-sung-phi-2",
+                "year": 2018,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    },
+                    {
+                        "id": "620a2238e0fc277084dfd291",
+                        "name": "Tâm Lý",
+                        "slug": "tam-ly"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "72922",
+                    "season": 3,
+                    "vote_average": 6.2,
+                    "vote_count": 12
+                },
+                "imdb": {
+                    "id": "tt7514476",
+                    "vote_average": 7.4,
+                    "vote_count": 460
+                },
+                "modified": {
+                    "time": "2025-09-18T15:14:50.000Z"
+                },
+                "_id": "625d8bb4db43524328aedf55",
+                "name": "Song Thế Sủng Phi 3",
+                "origin_name": "The Eternal Love 3",
+                "type": "series",
+                "thumb_url": "song-the-sung-phi-3-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "24 phút/tập",
+                "episode_current": "Hoàn Tất (30/30)",
+                "quality": "HD",
+                "lang": "Thuyết Minh",
+                "slug": "song-the-sung-phi-3",
+                "year": 2021,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    },
+                    {
+                        "id": "620a2238e0fc277084dfd291",
+                        "name": "Tâm Lý",
+                        "slug": "tam-ly"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "122123",
+                    "season": 2,
+                    "vote_average": 7.2,
+                    "vote_count": 9
+                },
+                "imdb": {
+                    "vote_average": 0,
+                    "vote_count": 0,
+                    "id": null
+                },
+                "modified": {
+                    "time": "2025-09-18T15:13:40.000Z"
+                },
+                "_id": "6239f09f3d016a3b6718873b",
+                "name": "Ngọc Chiêu Lệnh - Phần 2",
+                "origin_name": "No Boundary Season 2",
+                "type": "series",
+                "thumb_url": "ngoc-chieu-lenh-phan-2-thumb.jpg",
+                "time": "48M58S",
+                "episode_current": "Hoàn Tất (20/20)",
+                "quality": "HD",
+                "lang": "Vietsub + Thuyết Minh",
+                "slug": "ngoc-chieu-lenh-phan-2",
+                "year": 2021,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    },
+                    {
+                        "id": "620a2282e0fc277084dfd435",
+                        "name": "Viễn Tưởng",
+                        "slug": "vien-tuong"
+                    },
+                    {
+                        "id": "620f84d291fa4af90ab6b3f4",
+                        "name": "Bí ẩn",
+                        "slug": "bi-an"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ],
+                "sub_docquyen": false
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "122123",
+                    "season": 1,
+                    "vote_average": 7.2,
+                    "vote_count": 9
+                },
+                "imdb": {
+                    "vote_average": 0,
+                    "vote_count": 0,
+                    "id": null
+                },
+                "modified": {
+                    "time": "2025-09-18T15:13:28.000Z"
+                },
+                "_id": "623b016653ad6de2a993434c",
+                "name": "Ngọc Chiêu Lệnh Phần 1",
+                "origin_name": "No Boundary Season 1",
+                "type": "series",
+                "thumb_url": "ngoc-chieu-lenh-phan-1-thumb.jpg",
+                "time": "46 phút/tập",
+                "episode_current": "Hoàn Tất (32/32)",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "slug": "ngoc-chieu-lenh-phan-1",
+                "year": 2021,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    },
+                    {
+                        "id": "620a2282e0fc277084dfd435",
+                        "name": "Viễn Tưởng",
+                        "slug": "vien-tuong"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ],
+                "sub_docquyen": false
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "278011",
+                    "season": null,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "id": "tt34692112",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:12:07.000Z"
+                },
+                "_id": "68cbbed393eac2e8f9a19224",
+                "name": "Tình Yêu Này Có Trong Sáng?",
+                "slug": "tinh-yeu-nay-co-trong-sang",
+                "origin_name": "Platonic",
+                "type": "series",
+                "thumb_url": "tinh-yeu-nay-co-trong-sang-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "40 phút/tập",
+                "episode_current": "Trailer",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620a221de0fc277084dfd1c1",
+                        "name": "Hài Hước",
+                        "slug": "hai-huoc"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "620f7fa791fa4af90ab6ad1f",
+                        "name": "Thổ Nhĩ Kỳ",
+                        "slug": "tho-nhi-ky"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "movie",
+                    "id": "1429747",
+                    "season": null,
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "imdb": {
+                    "id": "tt35669032",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:09:26.000Z"
+                },
+                "_id": "68cbbe36a9b1c2261eb7c43d",
+                "name": "Ngày Lặp Với Người Thương",
+                "slug": "ngay-lap-voi-nguoi-thuong",
+                "origin_name": "Same Day with Someone",
+                "type": "single",
+                "thumb_url": "ngay-lap-voi-nguoi-thuong-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "119 Phút",
+                "episode_current": "Trailer",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620a221de0fc277084dfd1c1",
+                        "name": "Hài Hước",
+                        "slug": "hai-huoc"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "620a2318e0fc277084dfd77a",
+                        "name": "Thái Lan",
+                        "slug": "thai-lan"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "115548",
+                    "season": 1,
+                    "vote_average": 4,
+                    "vote_count": 3
+                },
+                "imdb": {
+                    "id": "tt12498112",
+                    "vote_average": 7.5,
+                    "vote_count": 87
+                },
+                "modified": {
+                    "time": "2025-09-18T15:08:13.000Z"
+                },
+                "_id": "627351d73a2c0c6289bc6c31",
+                "name": "Ta Chính Là Cô Nương Như Vậy",
+                "origin_name": "A Girl Like Me",
+                "type": "series",
+                "thumb_url": "ta-chinh-la-co-nuong-nhu-vay-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "45 phút/tập",
+                "episode_current": "Hoàn Tất (40/40)",
+                "quality": "HD",
+                "lang": "Vietsub + Thuyết minh",
+                "slug": "ta-chinh-la-co-nuong-nhu-vay",
+                "year": 2021,
+                "category": [
+                    {
+                        "id": "620a220de0fc277084dfd16d",
+                        "name": "Tình Cảm",
+                        "slug": "tinh-cam"
+                    },
+                    {
+                        "id": "620a222fe0fc277084dfd23d",
+                        "name": "Cổ Trang",
+                        "slug": "co-trang"
+                    },
+                    {
+                        "id": "620a2238e0fc277084dfd291",
+                        "name": "Tâm Lý",
+                        "slug": "tam-ly"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "249039",
+                    "season": null,
+                    "vote_average": 10,
+                    "vote_count": 1
+                },
+                "imdb": {
+                    "id": "tt23055142",
+                    "vote_average": 0,
+                    "vote_count": 0
+                },
+                "modified": {
+                    "time": "2025-09-18T15:06:04.000Z"
+                },
+                "_id": "68cbbd69fc63e123163a6aab",
+                "name": "Thỏ Đen",
+                "slug": "tho-den",
+                "origin_name": "Black Rabbit",
+                "type": "series",
+                "thumb_url": "tho-den-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "60 phút/tập",
+                "episode_current": "Trailer",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2025,
+                "category": [
+                    {
+                        "id": "620a2249e0fc277084dfd2e5",
+                        "name": "Hình Sự",
+                        "slug": "hinh-su"
+                    },
+                    {
+                        "id": "620f3d2b91fa4af90ab697fe",
+                        "name": "Chính kịch",
+                        "slug": "chinh-kich"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "620a231fe0fc277084dfd7ce",
+                        "name": "Âu Mỹ",
+                        "slug": "au-my"
+                    },
+                    {
+                        "id": "620a2370e0fc277084dfd91e",
+                        "name": "Anh",
+                        "slug": "anh"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "108321",
+                    "season": null,
+                    "vote_average": 7.5,
+                    "vote_count": 6
+                },
+                "imdb": {
+                    "id": "tt12987584",
+                    "vote_average": 7.4,
+                    "vote_count": 129
+                },
+                "modified": {
+                    "time": "2025-09-18T15:04:09.000Z"
+                },
+                "_id": "68cbbcf9dd2e6541d06278a7",
+                "name": "Thiếu Nữ Đại Nhân",
+                "slug": "thieu-nu-dai-nhan",
+                "origin_name": "Maiden Holmes",
+                "type": "series",
+                "thumb_url": "thieu-nu-dai-nhan-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "45 phút/tập",
+                "episode_current": "Trailer",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2020,
+                "category": [
+                    {
+                        "id": "620a21b2e0fc277084dfd0c5",
+                        "name": "Hành Động",
+                        "slug": "hanh-dong"
+                    },
+                    {
+                        "id": "620a221de0fc277084dfd1c1",
+                        "name": "Hài Hước",
+                        "slug": "hai-huoc"
+                    },
+                    {
+                        "id": "620a2293e0fc277084dfd489",
+                        "name": "Phiêu Lưu",
+                        "slug": "phieu-luu"
+                    },
+                    {
+                        "id": "620f84d291fa4af90ab6b3f4",
+                        "name": "Bí ẩn",
+                        "slug": "bi-an"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            },
+            {
+                "tmdb": {
+                    "type": "tv",
+                    "id": "107446",
+                    "season": null,
+                    "vote_average": 7.3,
+                    "vote_count": 3
+                },
+                "imdb": {
+                    "id": "tt12874672",
+                    "vote_average": 7.5,
+                    "vote_count": 39
+                },
+                "modified": {
+                    "time": "2025-09-18T15:02:55.000Z"
+                },
+                "_id": "68cbbcaf64345e80cbe9a00a",
+                "name": "Nữ Thế Tử",
+                "slug": "nu-the-tu",
+                "origin_name": "The Heiress",
+                "type": "series",
+                "thumb_url": "nu-the-tu-thumb.jpg",
+                "sub_docquyen": false,
+                "time": "45 phút/tập",
+                "episode_current": "Trailer",
+                "quality": "HD",
+                "lang": "Vietsub",
+                "year": 2020,
+                "category": [
+                    {
+                        "id": "620a221de0fc277084dfd1c1",
+                        "name": "Hài Hước",
+                        "slug": "hai-huoc"
+                    },
+                    {
+                        "id": "620f3d2b91fa4af90ab697fe",
+                        "name": "Chính kịch",
+                        "slug": "chinh-kich"
+                    }
+                ],
+                "country": [
+                    {
+                        "id": "62093063196e9f4ab6b448b8",
+                        "name": "Trung Quốc",
+                        "slug": "trung-quoc"
+                    }
+                ]
+            }
+        ],
+        "itemsSportsVideos": [],
+        "params": {
+            "type_slug": "danh-sach",
+            "filterCategory": [],
+            "filterCountry": [],
+            "filterYear": "",
+            "sortField": "",
+            "pagination": {
+                "totalItems": 30821,
+                "totalItemsPerPage": 24,
+                "currentPage": 1,
+                "pageRanges": 5
+            },
+            "itemsUpdateInDay": 54,
+            "totalSportsVideos": 0,
+            "itemsSportsVideosUpdateInDay": 0
+        },
+        "type_list": "phim-moi",
+        "APP_DOMAIN_FRONTEND": "https://ophim17.cc",
+        "APP_DOMAIN_CDN_IMAGE": "https://img.ophim.live"
+    }
+}

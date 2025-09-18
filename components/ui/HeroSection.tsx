@@ -1,9 +1,17 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { getHome, getMovie, getMovies } from '@/services/movie';
+import { Movie, MovieResponse } from '@/types/movie';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+    movies?: Movie[];
+}
+const HeroSection = ({ movies }: HeroSectionProps) => {
+
     return (
         <section id="hero" className="hero splide splide--hero">
             <Swiper
@@ -21,112 +29,65 @@ const HeroSection = () => {
                 modules={[Navigation, Autoplay]}
                 className="hero-swiper"
             >
-                <SwiperSlide>
-                    <div className="hero__slide">
-                        {/* slide bg */}
-                        <img src="/img/bg/slide__bg-1.jpg" alt="" className="hero__bg" />
-                        {/* slide content */}
-                        <div className="hero__content">
-                            <h2 className="hero__title">
-                                Savage Beauty <sub className="gold">9.8</sub>
-                            </h2>
-                            <p className="hero__text">
-                                A brilliant scientist discovers a way to harness the power of the ocean's
-                                currents to create a new, renewable energy source. But when her
-                                groundbreaking technology falls into the wrong hands, she must race
-                                against time to stop it from being used for evil.
-                            </p>
-                            <p className="hero__category">
-                                <a href="catalog1.html">Action</a>
-                                <a href="catalog1.html">Drama</a>
-                                <a href="catalog1.html">Comedy</a>
-                            </p>
-                            <div
-                                className="hero__hash"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-title="You earn FXC per min"
-                            >
-                                <img src="img/currencies/flixcoin.svg" alt="" />
-                                <span>+ 0.005</span>
-                                <span>/ min</span>
-                            </div>
-                            <div className="hero__actions">
-                                <a href="movie.html" className="hero__btn">
-                                    <span>Watch now</span>
-                                </a>
-                                <button className="hero__favorite" type="button">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={24}
-                                        height={24}
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
+                {
+                    movies && movies.map((movie) => (
+                        <SwiperSlide key={movie._id}>
+                            <div className="hero__slide">
+                                {/* slide bg */}
+                                <Image src={`${process.env.NEXT_PUBLIC_CDN_IMAGE_MOVIE}/uploads/movies/${movie.poster_url}`} fill alt={movie.name} className="hero__bg" />
+                                {/* slide content */}
+                                <div className="hero__content">
+                                    <h2 className="hero__title">
+                                        {movie.name} <sub className="gold">{Number(movie.tmdb.vote_average?.toFixed(1))}</sub>
+                                    </h2>
+                                    <p className="hero__text">
+                                        {movie.name}
+                                    </p>
+                                    <p className="hero__category">
+                                        {
+                                            movie.category.map((cat, idx) => (
+                                                <Link href="#" key={idx}>{cat.name}</Link>
+                                            ))
+                                        }
+
+                                    </p>
+                                    <div
+                                        className="hero__hash"
+                                        data-bs-toggle="tooltip"
+                                        data-bs-placement="top"
+                                        data-bs-title="You earn FXC per min"
                                     >
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
-                                    </svg>
-                                </button>
+
+                                        <span>{movie.time}</span>
+
+                                    </div>
+                                    <div className="hero__actions">
+                                        <a href="movie.html" className="hero__btn">
+                                            <span>Xem ngay</span>
+                                        </a>
+                                        <button className="hero__favorite" type="button">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width={24}
+                                                height={24}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                strokeWidth={2}
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            >
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="hero__slide">
-                        {/* slide bg */}
-                        <img src="/img/bg/slide__bg-1.jpg" alt="" className="hero__bg" />
-                        {/* slide content */}
-                        <div className="hero__content">
-                            <h2 className="hero__title">
-                                Savage Beauty <sub className="gold">9.8</sub>
-                            </h2>
-                            <p className="hero__text">
-                                A brilliant scientist discovers a way to harness the power of the ocean's
-                                currents to create a new, renewable energy source. But when her
-                                groundbreaking technology falls into the wrong hands, she must race
-                                against time to stop it from being used for evil.
-                            </p>
-                            <p className="hero__category">
-                                <a href="catalog1.html">Action</a>
-                                <a href="catalog1.html">Drama</a>
-                                <a href="catalog1.html">Comedy</a>
-                            </p>
-                            <div
-                                className="hero__hash"
-                                data-bs-toggle="tooltip"
-                                data-bs-placement="top"
-                                data-bs-title="You earn FXC per min"
-                            >
-                                <img src="img/currencies/flixcoin.svg" alt="" />
-                                <span>+ 0.005</span>
-                                <span>/ min</span>
-                            </div>
-                            <div className="hero__actions">
-                                <a href="movie.html" className="hero__btn">
-                                    <span>Watch now</span>
-                                </a>
-                                <button className="hero__favorite" type="button">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width={24}
-                                        height={24}
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        strokeWidth={2}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    >
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M18 7v14l-6 -4l-6 4v-14a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
+                        </SwiperSlide>
+                    ))
+                }
+
+
             </Swiper>
 
             <div className="hero__navs">
