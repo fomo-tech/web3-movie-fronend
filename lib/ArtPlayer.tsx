@@ -15,8 +15,9 @@ interface Level {
     name: string;
 }
 
-function playM3u8(video: HTMLVideoElement, url: string, art: Artplayer) {
+function playM3u8(video: HTMLVideoElement, url: string, art: any) {
     if (Hls.isSupported()) {
+
         if (art.hls) art.hls.destroy();
         const hls = new Hls();
         hls.loadSource(url);
@@ -172,7 +173,7 @@ export default function ArtPlayer({
         if (isAndroid) {
             art.on("fullscreen", (state) => {
                 if (state) {
-                    screen.orientation.lock("landscape");
+                    (screen.orientation as any).lock?.("landscape");
                 } else {
                     screen.orientation.unlock();
                 }

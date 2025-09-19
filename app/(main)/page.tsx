@@ -37,8 +37,8 @@ export default async function Home() {
       {/* hero */}
       <HeroSection movies={heroMovies.items || []} />
       <MoviesToday movies={whatMovieToWhatToday.items || []} />
-      <AdsEarning />
-      <CatalogSection />
+      {/* <AdsEarning />
+      <CatalogSection /> */}
     </>
 
   );

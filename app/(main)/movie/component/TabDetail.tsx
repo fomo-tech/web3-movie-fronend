@@ -662,7 +662,7 @@ const TabDetail = () => {
                                                             id="star10"
                                                             type="radio"
                                                         />
-                                                        <label title={10} htmlFor="star10">
+                                                        <label htmlFor="star10">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 width={24}
@@ -688,7 +688,7 @@ const TabDetail = () => {
                                                             id="star9"
                                                             type="radio"
                                                         />
-                                                        <label title={9} htmlFor="star9">
+                                                        <label htmlFor="star9">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 width={24}
@@ -713,7 +713,7 @@ const TabDetail = () => {
                                                             id="star8"
                                                             type="radio"
                                                         />
-                                                        <label title={8} htmlFor="star8">
+                                                        <label htmlFor="star8">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 width={24}
@@ -738,7 +738,7 @@ const TabDetail = () => {
                                                             id="star7"
                                                             type="radio"
                                                         />
-                                                        <label title={7} htmlFor="star7">
+                                                        <label htmlFor="star7">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 width={24}
@@ -763,7 +763,7 @@ const TabDetail = () => {
                                                             id="star6"
                                                             type="radio"
                                                         />
-                                                        <label title={6} htmlFor="star6">
+                                                        <label htmlFor="star6">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 width={24}
@@ -788,7 +788,7 @@ const TabDetail = () => {
                                                             id="star5"
                                                             type="radio"
                                                         />
-                                                        <label title={5} htmlFor="star5">
+                                                        <label htmlFor="star5">
                                                             <svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 width={24}

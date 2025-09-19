@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "update": "npx npm-check-updates -u && npm install"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.2",
@@ -15,16 +16,16 @@
     "artplayer-plugin-hls-control": "^1.0.1",
     "hls.js": "^1.6.12",
     "next": "15.5.3",
-    "query-string": "^9.3.0",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "query-string": "^9.3.1",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "react-hook-form": "^7.62.0",
     "react-player": "^3.3.2",
-    "swiper": "^12.0.1"
+    "swiper": "^12.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
