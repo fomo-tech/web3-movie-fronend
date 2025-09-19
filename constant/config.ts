@@ -1,0 +1,1 @@
+export const LIMIT_ITEM_MOVIE=25

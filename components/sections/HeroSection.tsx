@@ -1,9 +1,8 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules'
-import React, { useEffect } from 'react'
-import { getHome, getMovie, getMovies } from '@/services/movie';
-import { Movie, MovieResponse } from '@/types/movie';
+import React from 'react'
+import { Movie } from '@/types/movie';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,15 +33,19 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
                         <SwiperSlide key={movie._id}>
                             <div className="hero__slide">
                                 {/* slide bg */}
-                                <Image src={`${process.env.NEXT_PUBLIC_CDN_IMAGE_MOVIE}/uploads/movies/${movie.poster_url}`} fill alt={movie.name} className="hero__bg" />
+                                <Image src={`${process.env.NEXT_PUBLIC_CDN_IMAGE_MOVIE}/uploads/movies/${movie.poster_url}`} fill alt={movie.name} className="hero__bg" style={{ objectFit: 'cover' }} quality={100} />
                                 {/* slide content */}
                                 <div className="hero__content">
                                     <h2 className="hero__title">
                                         {movie.name} <sub className="gold">{Number(movie.tmdb.vote_average?.toFixed(1))}</sub>
                                     </h2>
-                                    <p className="hero__text">
-                                        {movie.name}
-                                    </p>
+                                    {/* <p className="hero__text"
+                                        dangerouslySetInnerHTML={{
+                                            __html: movie.content.replace(/<[^>]*>/g, ""),
+                                        }}
+                                    >
+
+                                    </p> */}
                                     <p className="hero__category">
                                         {
                                             movie.category.map((cat, idx) => (

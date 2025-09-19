@@ -3,9 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import '@/styles/bootstrap.min.css'
 import '@/styles/main.css'
 import 'swiper/css';
+import '@/styles/custom.css'
+import '@/styles/global.css'
 
 
-import MainLayout from "@/components/shared/MainLayout";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 

@@ -1,0 +1,163 @@
+@import url(./movie-player.css);
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* tối hơn một chút cho trailer nổi bật */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+    padding: 10px; /* tránh sát màn hình trên mobile */
+    box-sizing: border-box;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #141414;
+    border-radius: 16px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
+    opacity: 0;
+    animation: modalOpen 0.3s forwards;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.modal-close-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #898e95;
+}
+
+/* Trailer wrapper 16:9 */
+.trailer-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    background-color: #000;
+}
+
+/* ReactPlayer fit full */
+.trailer-wrapper .react-player-inner {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+.btn-trailer a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.movie-player {
+    padding: 20px;
+    margin: auto;
+}
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-wrapper .badge {
+    border-radius: 8px;
+    background: rgba(220, 53, 69, 0.8); /* semi-transparent */
+}
+.video-js .vjs-control-bar {
+    @apply bg-black/70 backdrop-blur-md rounded-b-xl px-3 py-1;
+}
+
+/* Nút control */
+.video-js .vjs-control {
+    @apply text-white hover:text-sky-400 transition-colors duration-200;
+}
+
+/* Nút play chính giữa video */
+.video-js .vjs-big-play-button {
+    @apply bg-sky-500/80 hover:bg-sky-600 text-white rounded-full shadow-lg border-none transition;
+    width: 64px !important;
+    height: 64px !important;
+    margin-left: -32px !important;
+    margin-top: -32px !important;
+}
+
+/* Thanh progress */
+.video-js .vjs-progress-holder {
+    @apply bg-gray-600/50 rounded-full h-1;
+}
+.video-js .vjs-play-progress {
+    @apply bg-orange-500 rounded-full h-1;
+}
+.video-js .vjs-load-progress {
+    @apply bg-gray-400/50 rounded-full h-1;
+}
+
+/* Thời gian */
+.video-js .vjs-current-time,
+.video-js .vjs-duration {
+    @apply text-sm text-gray-200;
+}
+
+/* Menu quality selector */
+.vjs-quality-selector {
+    @apply text-sm text-white bg-black/80 rounded-md px-2 py-1;
+}
+@keyframes modalOpen {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 80vh;
+        border-radius: 12px;
+    }
+    .trailer-wrapper {
+        padding-top: 56.25%; /* vẫn giữ 16:9 */
+    }
+}

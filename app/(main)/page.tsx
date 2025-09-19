@@ -1,7 +1,9 @@
 
-import CatalogSection from "@/components/ui/CatalogSection";
-import HeroSection from "@/components/ui/HeroSection";
-import { getMetadata, getMovies } from "@/services/movie";
+import AdsEarning from "@/components/sections/AdsEarning";
+import CatalogSection from "@/components/sections/CatalogSection";
+import HeroSection from "@/components/sections/HeroSection";
+import MoviesToday from "@/components/sections/MovieToday";
+import { getMetadata, getMovies, searchMovies } from "@/services/movie";
 import { MovieResponse } from "@/types/movie";
 import { Metadata } from "next";
 
@@ -23,11 +25,10 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function Home() {
 
-  const [heroMovies] =
+  const [heroMovies, whatMovieToWhatToday] =
     await Promise.all([
-      getMovies<MovieResponse>('phim-moi', {
-        limit: 5
-      })
+      getMovies<MovieResponse>("phim-moi"),
+      searchMovies<MovieResponse>()
     ]);
 
 
@@ -35,6 +36,8 @@ export default async function Home() {
     <>
       {/* hero */}
       <HeroSection movies={heroMovies.items || []} />
+      <MoviesToday movies={whatMovieToWhatToday.items || []} />
+      <AdsEarning />
       <CatalogSection />
     </>
 
