@@ -2169,7 +2169,7 @@ svg {
   color: #fff;
   margin-bottom: 16px;
   width: 100%;
-  max-width: 420px;
+  max-width: 768px;
 }
 .hero__meta {
   display: flex;
@@ -7203,7 +7203,7 @@ svg {
 }
 @media (min-width: 1200px) {
   .movie {
-    padding: 250px 40px 0;
+    padding: 100px 40px 0;
   }
 }
 /*==============================

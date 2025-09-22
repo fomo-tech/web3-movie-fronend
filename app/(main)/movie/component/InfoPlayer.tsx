@@ -23,7 +23,7 @@ const InfoPlayer = ({ movie }: InfoPlayerProps) => {
     ]
 
     return (
-        <div className="text-white px-8 py-12  max-w-4xl mx-auto font-sans">
+        <div className="text-white  py-12   mx-auto font-sans">
             {/* Movie Title and Subtitle */}
             <h1 className="text-4xl sm:text-5xl font-black tracking-tight">
                 Định Phong Ba

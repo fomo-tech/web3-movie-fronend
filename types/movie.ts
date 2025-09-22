@@ -14,7 +14,6 @@ export interface Filter {
   limit: number;
 }
 
-
 export interface Country {
   id: string;
   name: string;
@@ -81,7 +80,6 @@ export interface ActorResponse {
   tmdb_id: number;
   tmdb_type: string;
 }
-
 
 export interface Movie {
   _id: string;
@@ -177,4 +175,13 @@ export interface MovieDetailResponse {
     slug: string;
   };
   seoOnPage: SEO;
+}
+export interface National {
+  _id: string;
+  name: string;
+  slug: string;
+}
+
+export interface NationalReponse {
+  items: National[];
 }

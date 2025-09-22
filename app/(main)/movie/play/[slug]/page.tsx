@@ -59,7 +59,7 @@ export default async function WatchMovie({
     console.log(data);
 
     return (
-        <section className=" max-w-6xl mx-auto my-6">
+        <section className="container mx-auto my-6">
             {/* Player wrapper */}
             <div className="overflow-hidden ">
                 <VideoPlay

@@ -38,7 +38,7 @@ const DetailInfo = ({ detail }: DetailInfoProps) => {
                 <div className="container">
                     <div className="row">
                         {/* movie content */}
-                        <div className="col-12 col-lg-10 offset-lg-1 col-xl-12 offset-xl-0 col-xxl-8 offset-xxl-2">
+                        <div className="col-12 col-lg-10  col-xl-12  col-xxl-8 ">
                             <div className="movie__content">
                                 <h1 className="hero__title">
                                     {detail.item.name} <sub className="gold">{Number(detail.item.tmdb.vote_average?.toFixed(1))}</sub>
