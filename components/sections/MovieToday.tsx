@@ -10,15 +10,17 @@ import Link from "next/link";
 interface MovieTodayProps {
   movies: Movie[];
   title?: string;
+  slideKey: string;
+  isNew?: boolean;
 }
-const MoviesToday = ({ movies, title }: MovieTodayProps) => {
+const MoviesToday = ({ movies, title, slideKey, isNew }: MovieTodayProps) => {
   return (
     <section
       id="section-items"
-      className="section splide splide--items is-overflow is-initialized splide--loop splide--ltr splide--draggable is-active"
+      className="section !p-0 splide splide--items is-overflow is-initialized splide--loop splide--ltr splide--draggable is-active"
       aria-roledescription="carousel"
     >
-      <div className="container">
+      <div className="max-w-[90%] m-auto">
         <div className="row">
           {/* section title */}
           <div className="col-12">
@@ -28,11 +30,13 @@ const MoviesToday = ({ movies, title }: MovieTodayProps) => {
               </h2>
               <div className="section__nav">
                 <a href="catalog1.html" className="section__all">
-                  View all
+                  Xem tất cả
                 </a>
                 <div className="splide__arrows splide__arrows--ltr">
                   <button
-                    className="splide__arrow splide__arrow--prev-view"
+                    className={
+                      "splide__arrow " + "splide__arrow--prev-view_" + slideKey
+                    }
                     type="button"
                     aria-label="Go to last slide"
                     aria-controls="section-items-track"
@@ -52,7 +56,9 @@ const MoviesToday = ({ movies, title }: MovieTodayProps) => {
                     </svg>
                   </button>
                   <button
-                    className="splide__arrow splide__arrow--next-view"
+                    className={
+                      "splide__arrow " + "splide__arrow--next-view_" + slideKey
+                    }
                     type="button"
                     aria-label="Next slide"
                     aria-controls="section-items-track"
@@ -83,13 +89,9 @@ const MoviesToday = ({ movies, title }: MovieTodayProps) => {
                 slidesPerView={5}
                 spaceBetween={10}
                 loop
-                autoplay={{
-                  delay: 4000, // 4s đổi slide
-                  disableOnInteraction: false,
-                }}
                 navigation={{
-                  nextEl: ".splide__arrow--next-view",
-                  prevEl: ".splide__arrow--prev-view",
+                  nextEl: ".splide__arrow--next-view_" + slideKey,
+                  prevEl: ".splide__arrow--prev-view_" + slideKey,
                 }}
                 breakpoints={{
                   0: {
@@ -108,16 +110,16 @@ const MoviesToday = ({ movies, title }: MovieTodayProps) => {
                     slidesPerView: 4,
                     spaceBetween: 10,
                   },
-                  1280: {
-                    slidesPerView: 5,
+                  1440: {
+                    slidesPerView: 6,
                     spaceBetween: 10,
                   },
                 }}
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation]}
               >
                 {movies.map((movie, idx) => (
                   <SwiperSlide key={idx}>
-                    <MovieItem movie={movie} />
+                    <MovieItem movie={movie} isNew={isNew} />
                   </SwiperSlide>
                 ))}
               </Swiper>

@@ -1,54 +1,54 @@
 @import "tailwindcss";
 /* ==== Thanh control bar ==== */
 .video-js .vjs-control-bar {
-    @apply bg-black/70 backdrop-blur-md rounded-b-xl px-3 py-1;
+  @apply bg-black/70 backdrop-blur-md rounded-b-xl px-3 py-1;
 }
 
 /* ==== Các nút control ==== */
 .video-js .vjs-control {
-    @apply text-white hover:text-sky-400 transition-colors duration-200;
+  @apply text-white hover:text-sky-400 transition-colors duration-200;
 }
 
 /* ==== Nút play chính giữa video ==== */
 .video-js .vjs-big-play-button {
-    @apply bg-sky-500/80 hover:bg-sky-600 text-white rounded-full shadow-lg border-none transition;
-    @apply flex items-center justify-center;
-    width: 64px !important;
-    height: 64px !important;
-    margin-left: -32px !important;
-    margin-top: -32px !important;
-    border: none !important;
+  @apply bg-sky-500/80 hover:bg-sky-600 text-white rounded-full shadow-lg border-none transition;
+  @apply flex items-center justify-center;
+  width: 64px !important;
+  height: 64px !important;
+  margin-left: -32px !important;
+  margin-top: -32px !important;
+  border: none !important;
 }
 
 /* ==== Thanh progress ==== */
 .video-js .vjs-progress-holder {
-    @apply bg-gray-600/50 rounded-full h-1;
+  @apply bg-gray-600/50 rounded-full h-1;
 }
 .video-js .vjs-play-progress {
-    @apply bg-orange-500 rounded-full h-1;
+  @apply bg-orange-500 rounded-full h-1;
 }
 .video-js .vjs-load-progress {
-    @apply bg-gray-400/50 rounded-full h-1;
+  @apply bg-gray-400/50 rounded-full h-1;
 }
 
 /* ==== Thời gian ==== */
 .video-js .vjs-current-time,
 .video-js .vjs-duration {
-    @apply text-sm text-gray-200;
+  @apply text-sm text-gray-200;
 }
 
 /* ==== Quality selector menu ==== */
 .vjs-quality-selector {
-    @apply text-sm text-white bg-black/80 rounded-md px-2 py-1;
+  @apply text-sm text-white bg-black/80 rounded-md px-2 py-1;
 }
 
 /* ==== Custom nút skip 10s ==== */
 .vjs-icon-replay::before {
-    content: "⏪";
-    @apply text-lg;
+  content: "⏪";
+  @apply text-lg;
 }
 
 .vjs-icon-forward::before {
-    content: "⏩";
-    @apply text-lg;
+  content: "⏩";
+  @apply text-lg;
 }
