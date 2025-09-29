@@ -102,7 +102,7 @@ export interface Movie {
   country: Country[];
   modified: { time: string };
   tmdb: Tmdb;
-  imdb: { id: string };
+  imdb: { id: string; vote_average?: number; vote_count?: number };
   notify: string;
   showtimes: string;
   view: number;
@@ -112,7 +112,7 @@ export interface Movie {
   episodes: Episode[];
 }
 
-interface Breadcrumb {
+export interface Breadcrumb {
   name: string;
   slug?: string;
   isCurrent: boolean;

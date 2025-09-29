@@ -14,7 +14,7 @@ interface HeroSectionProps {
 const MovieSectionHome = ({ movies }: HeroSectionProps) => {
   return (
     <div className="section !p-0   md:mt-[-50px]">
-      <div className="max-w-[90%] m-auto">
+      <div className="max-w-90 m-auto">
         <div className="row">
           <div className="col-12">
             <div className="section__header">
@@ -116,7 +116,10 @@ const MovieSectionHome = ({ movies }: HeroSectionProps) => {
                             className="itemcard__bg"
                           />
 
-                          <Link href="movie.html" className="item__play">
+                          <Link
+                            href={"/movie/" + movie.slug}
+                            className="item__play"
+                          >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width={24}

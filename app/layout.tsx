@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import '@/styles/bootstrap.min.css'
-import '@/styles/main.css'
-import 'swiper/css';
-import '@/styles/custom.css'
-import '@/styles/global.css'
-
+import "@/styles/global.scss";
+import "@/styles/bootstrap.min.css";
+import "@/styles/main.css";
+import "swiper/css";
+import "@/styles/custom.css";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
-
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
+        <GoogleOAuthProvider
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}
+        >
           {children}
         </GoogleOAuthProvider>
       </body>

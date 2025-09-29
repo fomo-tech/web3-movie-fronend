@@ -14,13 +14,15 @@ interface MovieTodayProps {
   isNew?: boolean;
 }
 const MoviesToday = ({ movies, title, slideKey, isNew }: MovieTodayProps) => {
+  console.log(movies);
+
   return (
     <section
       id="section-items"
-      className="section !p-0 splide splide--items is-overflow is-initialized splide--loop splide--ltr splide--draggable is-active"
+      className="section !p-0 splide splide--items is-overflow is-initialized splide--loop splide--ltr splide--draggable is-active mb-5"
       aria-roledescription="carousel"
     >
-      <div className="max-w-[90%] m-auto">
+      <div className="max-w-90 m-auto">
         <div className="row">
           {/* section title */}
           <div className="col-12">

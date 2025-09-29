@@ -1,0 +1,24 @@
+@import "scss/app";
+@import "scss/modal";
+
+.max-w-90 {
+  max-width: 90%;
+}
+
+.trailer {
+  margin: 2rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000; // fallback nếu chưa load video
+  max-width: 992px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .trailer__player {
+    aspect-ratio: 16 / 9; // giữ đúng tỷ lệ, không cần padding hack
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,404 @@
+//hero section
+$primary: #e84142;
+$white: #fff;
+$gray: #ccc;
+$dark: #111;
+$secondary: #2d2d2d;
+$text-gray: #aaa;
+
+.hero__content {
+  .hero-text-box {
+    max-width: 700px;
+    padding: 2rem 0;
+    color: $white;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .categories {
+      margin-bottom: 1rem;
+
+      span {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: $white;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        margin-right: 0.5rem;
+        transition: 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    .movie-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: $gray;
+      margin-bottom: 1.5rem;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        stroke: $gray;
+      }
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(45deg, #ff4f70, #ffa387);
+        box-shadow: 0 4px 12px rgba(255, 79, 112, 0.3);
+        color: $white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          stroke: $white;
+        }
+
+        &:hover {
+          background: linear-gradient(45deg, #ffa387, #ff4f70);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(255, 79, 112, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 3px 8px rgba(255, 79, 112, 0.2);
+        }
+      }
+
+      button {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        svg {
+          width: 22px;
+          height: 22px;
+          stroke: $white;
+        }
+
+        &:hover {
+          background: $primary;
+        }
+      }
+    }
+  }
+}
+
+//topics
+
+.topics {
+  padding: 3rem 0; // py-12
+  background: transparent;
+
+  .container {
+    max-width: 90%; // max-w-90
+    margin: 0 auto;
+  }
+
+  .section__header {
+    margin-bottom: 1.5rem;
+
+    .section__title {
+      font-size: 2rem; // text-2xl
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .topics__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; // gap-6
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // md:grid-cols-2
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr); // lg:grid-cols-4
+    }
+  }
+
+  .topic-card {
+    position: relative;
+    padding: 1.5rem; // p-6
+    border-radius: 1rem; // rounded-2xl
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h3 {
+      font-size: 1.25rem; // text-xl
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 0.875rem; // text-sm
+      opacity: 0.9;
+    }
+
+    &__icon {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: #fff;
+      }
+    }
+
+    // gradient utilities (thay Tailwind bg-gradient-to-r)
+    &.gradient-blue {
+      background: linear-gradient(to right, #3b82f6, #06b6d4);
+    }
+    &.gradient-purple {
+      background: linear-gradient(to right, #8b5cf6, #ec4899);
+    }
+    &.gradient-green {
+      background: linear-gradient(to right, #22c55e, #16a34a);
+    }
+    &.gradient-orange {
+      background: linear-gradient(to right, #f97316, #facc15);
+    }
+  }
+}
+
+//MOVIE DETAIL
+
+.movie-detail {
+  color: #fff;
+  padding: 3rem 1.5rem;
+  font-family: "Inter", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 2.5rem; // chữ lớn
+    font-weight: 900; // font đậm
+    color: $primary; // dùng biến màu primary từ SCSS
+    margin-bottom: 0.75rem; // khoảng cách dưới
+
+    // Nếu muốn chữ gradient giống button:
+    background: linear-gradient(45deg, #ff4f70, #ffa387);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: $text-gray;
+    margin-bottom: 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+
+    .btn {
+      padding: 0.9rem 1.6rem;
+      border-radius: 20px; // radius lớn hơn
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &--primary {
+        background: linear-gradient(45deg, #ff4f70, #ffa387);
+        box-shadow: 0 4px 12px rgba(255, 79, 112, 0.3);
+        color: #fff;
+        &:hover {
+          background: linear-gradient(45deg, #ffa387, #ff4f70);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(255, 79, 112, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 3px 8px rgba(255, 79, 112, 0.2);
+        }
+      }
+
+      &--secondary {
+        background: $secondary;
+        color: $text-gray;
+        &:hover {
+          background: lighten($secondary, 5%);
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.8rem;
+
+    .badge {
+      background: $secondary;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      color: $text-gray;
+    }
+
+    .rating {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #4ade80;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.95rem;
+    color: $text-gray;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    color: $text-gray;
+    line-height: 1.7;
+    font-size: 1rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
+  }
+
+  &__genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .genre {
+      background: $secondary;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: $text-gray;
+    }
+  }
+
+  &__breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    .crumb {
+      background: $secondary;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: $text-gray;
+    }
+  }
+}
+
+.actor-list {
+  margin-top: 2rem;
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+}
+
+.actor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e84142;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: lighten(#e84142, 10%);
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    line-clamp: 1;
+  }
+
+  &__role {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+  }
+}
