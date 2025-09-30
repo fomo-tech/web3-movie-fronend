@@ -57,7 +57,7 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
                     </div>
 
                     <div className="actions">
-                      <a href={`/movie/${movie.slug}`}>
+                      <Link href={`/movie/${movie.slug}`}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -74,7 +74,7 @@ const HeroSection = ({ movies }: HeroSectionProps) => {
                         </svg>
 
                         <span>Xem ngay</span>
-                      </a>
+                      </Link>
                       <button type="button" aria-label="Yêu thích">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

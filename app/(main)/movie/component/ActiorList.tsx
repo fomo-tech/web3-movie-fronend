@@ -10,6 +10,7 @@ interface ActionListProps {
   actors: ActorResponse;
 }
 const ActiorList = ({ actors }: ActionListProps) => {
+  if (!actors.peoples.length) return;
   return (
     <div className="actor-list mt-5">
       <h2 className="actor-list__title">Diễn viên & Đạo diễn</h2>

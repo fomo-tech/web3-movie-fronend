@@ -13,12 +13,17 @@ interface MainLayoutProps {
   nationsMovie: National[];
 }
 
-const MainLayout = ({ children, categoriesMovie }: MainLayoutProps) => {
-  const { setCategories } = useMovie();
+const MainLayout = ({
+  children,
+  categoriesMovie,
+  nationsMovie,
+}: MainLayoutProps) => {
+  const { setCategories, setNationals } = useMovie();
 
   useEffect(() => {
     setCategories(categoriesMovie);
-  }, []);
+    setNationals(nationsMovie);
+  }, [nationsMovie, categoriesMovie]);
   return (
     <>
       <Sidebar />

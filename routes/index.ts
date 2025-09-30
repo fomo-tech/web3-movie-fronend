@@ -4,6 +4,7 @@ export const ROUTES = {
   signin: "/signin",
   signup: "/signup",
   profile: "/profile",
+  movies: "/list-movie",
 } as const;
 
 export const publicRoutes: string[] = [
@@ -12,8 +13,6 @@ export const publicRoutes: string[] = [
   ROUTES.signup,
 ];
 
-export const protectedRoutes: string[] = [
-  ROUTES.profile,
-];
+export const protectedRoutes: string[] = [ROUTES.profile];
 
 export const allRoutes: string[] = [...publicRoutes, ...protectedRoutes];

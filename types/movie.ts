@@ -5,13 +5,13 @@ export type SearchParams = Promise<Record<string, string | undefined>>;
 export type ParamsFilter<T> = Promise<T>;
 
 export interface Filter {
-  sort_field: string;
-  sort_type: string;
-  category: string;
-  page: string;
-  year: string;
-  country: string;
-  limit: number;
+  sort_field?: string;
+  sort_type?: string;
+  category?: string;
+  page?: number;
+  year?: string;
+  country?: string;
+  limit?: number;
 }
 
 export interface Country {
@@ -43,6 +43,12 @@ export interface Tmdb {
 
 export interface Category {
   _id: string;
+  name: string;
+  slug: string;
+}
+
+export interface ListMovie {
+  id: number;
   name: string;
   slug: string;
 }

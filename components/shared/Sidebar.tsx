@@ -4,7 +4,11 @@ import React from "react";
 import logo from "@/img/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { ROUTES } from "@/routes";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
 const Sidebar = () => {
+  const pathname = usePathname();
   return (
     <>
       {/* sidebar */}
@@ -19,8 +23,8 @@ const Sidebar = () => {
         <div className="sidebar__content">
           <div className="sidebar__menu">
             <ul className="sidebar__nav">
-              <li className="active">
-                <Link href="/">
+              <li className={clsx({ active: pathname === ROUTES.home })}>
+                <Link href={ROUTES.home}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
@@ -39,8 +43,9 @@ const Sidebar = () => {
                   <span>Home</span>
                 </Link>
               </li>
-              <li>
-                <a href="catalog1.html">
+              moviess
+              <li className={clsx({ active: pathname === ROUTES.movies })}>
+                <Link href={ROUTES.movies}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
@@ -61,8 +66,9 @@ const Sidebar = () => {
                     <path d="M16 8l4 0" />
                     <path d="M16 16l4 0" />
                   </svg>
-                  <span>Movies</span> <p>25 947</p>
-                </a>
+                  <span>Movies</span>
+                  {/* <p>25 947</p> */}
+                </Link>
               </li>
               <li>
                 <a href="catalog2.html">

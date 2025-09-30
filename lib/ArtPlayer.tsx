@@ -4,57 +4,54 @@ import Artplayer from "artplayer";
 import Hls from "hls.js";
 import artplayerPluginHlsControl from "artplayer-plugin-hls-control";
 
-
 interface ArtPlayerProps extends React.HTMLAttributes<HTMLDivElement> {
-    option: Omit<Artplayer["option"], "container">;
-    getInstance?: (instance: Artplayer) => void;
+  option: Omit<Artplayer["option"], "container">;
+  getInstance?: (instance: Artplayer) => void;
 }
 
 interface Level {
-    height: number;
-    name: string;
+  height: number;
+  name: string;
 }
 
 function playM3u8(video: HTMLVideoElement, url: string, art: any) {
-    if (Hls.isSupported()) {
-
-        if (art.hls) art.hls.destroy();
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-        art.hls = hls;
-        art.on("destroy", () => hls.destroy());
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = url;
-    } else {
-        art.notice.show = "Không hỗ trợ định dạng playback: m3u8";
-    }
+  if (Hls.isSupported()) {
+    if (art.hls) art.hls.destroy();
+    const hls = new Hls();
+    hls.loadSource(url);
+    hls.attachMedia(video);
+    art.hls = hls;
+    art.on("destroy", () => hls.destroy());
+  } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    video.src = url;
+  } else {
+    art.notice.show = "Không hỗ trợ định dạng playback: m3u8";
+  }
 }
 
 const isAndroid = /Android/i.test(navigator.userAgent);
 
 export default function ArtPlayer({
-    option,
-    getInstance,
-    ...rest
+  option,
+  getInstance,
+  ...rest
 }: ArtPlayerProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const artRef = useRef<Artplayer>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const artRef = useRef<Artplayer>(null);
 
-
-    useEffect(() => {
-        const container = containerRef.current;
-        if (!container) return;
-        const art = new Artplayer({
-            ...option,
-            container,
-            type: "m3u8",
-            controls: [
-                {
-                    index: 1,
-                    position: "right",
-                    tooltip: "-10 giây",
-                    html: `<button type="button" class="text-white hidden md:block">
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const art = new Artplayer({
+      ...option,
+      container,
+      type: "m3u8",
+      controls: [
+        {
+          index: 1,
+          position: "right",
+          tooltip: "-10 giây",
+          html: `<button type="button" class="text-white hidden md:block">
               <svg
                 width="26"
                 height="24"
@@ -76,15 +73,15 @@ export default function ArtPlayer({
                 ></path>
               </svg>
             </button>`,
-                    click: function () {
-                        this.backward = 10;
-                    },
-                },
-                {
-                    index: 2,
-                    position: "right",
-                    tooltip: "+10 giây",
-                    html: ` <button type="button" class="text-white hidden md:block">
+          click: function () {
+            this.backward = 10;
+          },
+        },
+        {
+          index: 2,
+          position: "right",
+          tooltip: "+10 giây",
+          html: ` <button type="button" class="text-white hidden md:block">
               <svg
                 width="27"
                 height="24"
@@ -106,124 +103,133 @@ export default function ArtPlayer({
                 ></path>
               </svg>
             </button>`,
-                    click: function () {
-                        this.forward = 10;
-                    },
-                },
-            ],
-            customType: {
-                m3u8: playM3u8,
-            },
-            plugins: [
-                artplayerPluginHlsControl({
-                    quality: {
-                        // Show qualitys in setting
-                        setting: true,
-                        // Get the quality name from level
-                        getName: (level) => (level as Level).height + "P",
-                        title: "Chất lượng",
-                        auto: "Tự động",
-                    },
-                    audio: {
-                        // Show audios in setting
-                        setting: true,
-                        // Get the audio name from track
-                        getName: (track) => (track as Level).name,
-                        title: "Âm thanh",
-                        auto: "Tự động",
-                    },
-                }),
-            ],
-            i18n: {
-                vi: {
-                    Play: "Phát (k)",
-                    Pause: "Tạm dừng (k)",
-                    "Show Setting": "Cài đặt",
-                    "Play Speed": "Tốc độ phát",
-                    "Video Flip": "Xoay video",
-                    "PIP Mode": "Trình phát thu nhỏ (i)",
-                    "Aspect Ratio": "Tỷ lệ khung hình",
-                    Mute: "Tắt tiếng (m)",
-                    Volume: "Âm lượng",
-                    Fullscreen: "Toàn màn hình (f)",
-                    "Exit Fullscreen": "Thoát (f)",
-                    "Exit PIP Mode": "Thoát (i)",
-                    Normal: "Bình thường",
-                    Horizontal: "Xoay ngang",
-                    Vertical: "Xoay dọc",
-                    Open: "Mở",
-                    Close: "Đóng",
-                    Default: "Mặc định",
-                },
-                tr: {},
-                id: {},
-                en: {},
-                "zh-cn": {},
-                "zh-tw": {},
-                pl: {},
-                cs: {},
-                es: {},
-                fa: {},
-                fr: {},
-                ru: {},
-                ar: {},
-            },
-        });
+          click: function () {
+            this.forward = 10;
+          },
+        },
+      ],
+      customType: {
+        m3u8: playM3u8,
+      },
+      plugins: [
+        artplayerPluginHlsControl({
+          quality: {
+            // Show qualitys in setting
+            setting: true,
+            // Get the quality name from level
+            getName: (level) => (level as Level).height + "P",
+            title: "Chất lượng",
+            auto: "Tự động",
+          },
+          audio: {
+            // Show audios in setting
+            setting: true,
+            // Get the audio name from track
+            getName: (track) => (track as Level).name,
+            title: "Âm thanh",
+            auto: "Tự động",
+          },
+        }),
+      ],
+      i18n: {
+        vi: {
+          Play: "Phát (k)",
+          Pause: "Tạm dừng (k)",
+          "Show Setting": "Cài đặt",
+          "Play Speed": "Tốc độ phát",
+          "Video Flip": "Xoay video",
+          "PIP Mode": "Trình phát thu nhỏ (i)",
+          "Aspect Ratio": "Tỷ lệ khung hình",
+          Mute: "Tắt tiếng (m)",
+          Volume: "Âm lượng",
+          Fullscreen: "Toàn màn hình (f)",
+          "Exit Fullscreen": "Thoát (f)",
+          "Exit PIP Mode": "Thoát (i)",
+          Normal: "Bình thường",
+          Horizontal: "Xoay ngang",
+          Vertical: "Xoay dọc",
+          Open: "Mở",
+          Close: "Đóng",
+          Default: "Mặc định",
+        },
+        tr: {},
+        id: {},
+        en: {},
+        "zh-cn": {},
+        "zh-tw": {},
+        pl: {},
+        cs: {},
+        es: {},
+        fa: {},
+        fr: {},
+        ru: {},
+        ar: {},
+      },
+    });
 
-        if (isAndroid) {
-            art.on("fullscreen", (state) => {
-                if (state) {
-                    (screen.orientation as any).lock?.("landscape");
-                } else {
-                    screen.orientation.unlock();
-                }
-            });
+    if (isAndroid) {
+      art.on("fullscreen", (state) => {
+        if (state) {
+          (screen.orientation as any).lock?.("landscape");
+        } else {
+          screen.orientation.unlock();
         }
+      });
+    }
 
-        artRef.current = art;
+    artRef.current = art;
 
-        if (getInstance && typeof getInstance === "function") {
-            getInstance(art);
+    if (getInstance && typeof getInstance === "function") {
+      getInstance(art);
+    }
+
+    return () => {
+      if (art && art.destroy) {
+        art.destroy(false);
+      }
+    };
+  }, [getInstance, option]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const art = artRef.current;
+      if (!art) return;
+
+      if (e.key.toLocaleLowerCase() === "m") {
+        art.muted = !art.muted;
+      }
+      if (e.key.toLowerCase() === "f") {
+        art.fullscreen = !art.fullscreen;
+      }
+
+      if (e.key.toLowerCase() === "i") {
+        art.pip = !art.pip;
+      }
+
+      if (e.key.toLowerCase() === "k") {
+        if (art.video.paused) {
+          art.play();
+        } else {
+          art.pause();
         }
+      }
+    };
 
-        return () => {
-            if (art && art.destroy) {
-                art.destroy(false);
-            }
-        };
-    }, [getInstance, option]);
+    window.addEventListener("keydown", handleKeyDown);
 
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            const art = artRef.current;
-            if (!art) return;
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
-            if (e.key.toLocaleLowerCase() === "m") {
-                art.muted = !art.muted;
-            }
-            if (e.key.toLowerCase() === "f") {
-                art.fullscreen = !art.fullscreen;
-            }
-
-            if (e.key.toLowerCase() === "i") {
-                art.pip = !art.pip;
-            }
-
-            if (e.key.toLowerCase() === "k") {
-                if (art.video.paused) {
-                    art.play();
-                } else {
-                    art.pause();
-                }
-            }
-        };
-
-        window.addEventListener("keydown", handleKeyDown);
-
-        return () => {
-            window.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
-
-    return <div ref={containerRef} {...rest} className="w-full h-full"></div>;
+  return (
+    <div
+      ref={containerRef}
+      {...rest}
+      style={{
+        width: "100%",
+        height: "100%",
+      }}
+    ></div>
+  );
 }
