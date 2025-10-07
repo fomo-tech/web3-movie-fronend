@@ -43,7 +43,6 @@ const Sidebar = () => {
                   <span>Home</span>
                 </Link>
               </li>
-              moviess
               <li className={clsx({ active: pathname === ROUTES.movies })}>
                 <Link href={ROUTES.movies}>
                   <svg

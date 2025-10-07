@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import clsx from "clsx";
 import { useClickOutside } from "@/hooks/useClickOutside";
 
@@ -15,7 +15,8 @@ interface DropdownItem {
 
 interface FilterDropdownProps {
   id: string;
-  title: string;
+  counter?: number;
+  label: ReactNode | string;
   icon?: React.ReactNode;
   type?: DropdownType;
   items: DropdownItem[];
@@ -26,12 +27,13 @@ interface FilterDropdownProps {
 
 const FilterDropdown: React.FC<FilterDropdownProps> = ({
   id,
-  title,
+  label,
   icon,
   type = "list",
   items,
   showClear,
   onClear,
+  counter,
   onChange,
 }) => {
   const [open, setOpen] = useState(false);
@@ -49,14 +51,15 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       })}
     >
       <button
-        className="filter__btn"
+        className={clsx("filter__btn")}
         type="button"
         id={id}
         onClick={toggle}
         aria-expanded={open}
       >
         {icon && <span className="filter__btn-icon">{icon}</span>}
-        <span className="filter__btn-name">{title}</span>
+        {counter && <span className="filter__btn-counter">{counter}</span>}
+        <span className="filter__btn-name">{label}</span>
         <span className="filter__btn-arrow">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -3,8 +3,19 @@
 import { useMovie } from "@/store/useMovie";
 import React from "react";
 import FilterDropdown from "../common/FilterDropdown";
+import { Filter } from "@/types/movie";
+import { log } from "console";
 
-const FilterMovie = () => {
+interface FilterMovieProps {
+  setSlug: React.Dispatch<
+    React.SetStateAction<{ label: string; value: string }>
+  >;
+  setQuery: (value: Filter | ((prevState: Filter) => Filter)) => void;
+  query?: Filter;
+  slug?: { label: string; value: string };
+}
+
+const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
   const { categories, nationals, listMovie } = useMovie();
   return (
     <>
@@ -46,40 +57,64 @@ const FilterMovie = () => {
           </div>
           <FilterDropdown
             id="filterDrop0"
-            title="Danh sách phim"
+            label={slug?.label || "Danh sách phim"}
             type="list"
             items={listMovie.map((n) => ({
               label: n.name,
-              value: n.id + "",
+              value: n.slug + "",
               checked: false,
             }))}
             onClear={() => {
+              setSlug({ label: "", value: "" });
               console.log("Clear all categories");
             }}
             onChange={(item, index) => {
+              setSlug({ label: item.label, value: listMovie[index].slug });
               console.log("Toggle category", item, index);
             }}
           />
           <FilterDropdown
             id="filterDrop1"
-            title="Tất cả thể loại"
+            label="Tất cả thể loại"
+            counter={
+              query?.category ? query.category.split(",").length : undefined
+            }
             type="checkboxes"
             items={categories.map((c) => ({
               label: c.name,
-              value: c._id,
-              checked: false,
+              value: c.slug,
+              checked: query?.category
+                ? query.category.split(",").includes(c.slug)
+                : false,
             }))}
             showClear
             onClear={() => {
               console.log("Clear all categories");
             }}
             onChange={(item, index) => {
-              console.log("Toggle category", item, index);
+              const current = query?.category || "";
+              const arr = current ? current.split(",") : [];
+              if (arr.includes(item.value)) {
+                // Nếu có rồi => xoá
+                arr.splice(arr.indexOf(item.value), 1);
+              } else {
+                // Nếu chưa có => thêm
+                arr.push(item.value);
+              }
+
+              const newCategory = arr.join(",");
+
+              setQuery((prev) => ({
+                ...prev,
+                category: newCategory,
+              }));
+
+              console.log("Updated category:", newCategory);
             }}
           />
           <FilterDropdown
             id="filterDrop2"
-            title="Quốc gia"
+            label="Quốc gia"
             type="checkboxes"
             items={nationals.map((n) => ({
               label: n.name,

@@ -15,7 +15,13 @@ interface CatalogProps {
   movies: Movie[];
 }
 const Catalog = ({ movies }: CatalogProps) => {
-  const [slug, setSlug] = useState<string>("");
+  const [slug, setSlug] = useState<{
+    label: string;
+    value: string;
+  }>({
+    label: "",
+    value: "",
+  });
   const [dataMovies, setDataMovies] = useState<Movie[]>(movies);
 
   const [query, setQuery] = useState<Filter>({
@@ -25,7 +31,7 @@ const Catalog = ({ movies }: CatalogProps) => {
 
   const getMoviesFilter = async () => {
     try {
-      const data = await getMovies<MovieResponse>(slug, {
+      const data = await getMovies<MovieResponse>(slug.value, {
         ...query,
       });
 
@@ -49,7 +55,12 @@ const Catalog = ({ movies }: CatalogProps) => {
         <div className="row">
           {/* filter */}
           <div className="col-12">
-            <FilterMovie />
+            <FilterMovie
+              query={query}
+              setQuery={setQuery}
+              setSlug={setSlug}
+              slug={slug}
+            />
           </div>
           {/* end filter */}
           {/* grid */}
