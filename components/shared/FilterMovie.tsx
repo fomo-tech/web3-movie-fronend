@@ -5,13 +5,14 @@ import React from "react";
 import FilterDropdown from "../common/FilterDropdown";
 import { Filter } from "@/types/movie";
 import { log } from "console";
+import clsx from "clsx";
 
 interface FilterMovieProps {
   setSlug: React.Dispatch<
     React.SetStateAction<{ label: string; value: string }>
   >;
   setQuery: (value: Filter | ((prevState: Filter) => Filter)) => void;
-  query?: Filter;
+  query?: Filter & { keyword?: string };
   slug?: { label: string; value: string };
 }
 
@@ -23,7 +24,19 @@ const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
       <div className="col-12">
         <div className="filter">
           <div className="filter__search">
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              placeholder="Search"
+              value={query?.keyword || ""}
+              onChange={(e) =>
+                setQuery((prev) => ({
+                  ...prev,
+                  keyword: e.target.value,
+                  category: "",
+                  country: "",
+                }))
+              }
+            />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={24}
@@ -38,7 +51,13 @@ const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
               <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
               <path d="M21 21l-6 -6" />
             </svg>
-            <button className="filter__search-clear" type="button">
+            <button
+              className={clsx("filter__search-clear", {
+                active: !!query?.keyword,
+              })}
+              type="button"
+              onClick={() => setQuery((prev) => ({ ...prev, keyword: "" }))}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
@@ -55,7 +74,7 @@ const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
               </svg>
             </button>
           </div>
-          <FilterDropdown
+          {/* <FilterDropdown
             id="filterDrop0"
             label={slug?.label || "Danh sách phim"}
             type="list"
@@ -72,10 +91,11 @@ const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
               setSlug({ label: item.label, value: listMovie[index].slug });
               console.log("Toggle category", item, index);
             }}
-          />
+          /> */}
           <FilterDropdown
             id="filterDrop1"
             label="Tất cả thể loại"
+            labelSelected="Thể loại đã chọn"
             counter={
               query?.category ? query.category.split(",").length : undefined
             }
@@ -89,6 +109,7 @@ const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
             }))}
             showClear
             onClear={() => {
+              setQuery((prev) => ({ ...prev, category: "" }));
               console.log("Clear all categories");
             }}
             onChange={(item, index) => {
@@ -115,17 +136,42 @@ const FilterMovie = ({ setQuery, slug, query, setSlug }: FilterMovieProps) => {
           <FilterDropdown
             id="filterDrop2"
             label="Quốc gia"
+            labelSelected="Quốc gia đã chọn"
             type="checkboxes"
             items={nationals.map((n) => ({
               label: n.name,
-              value: n._id,
-              checked: false,
+              value: n.slug,
+              checked: query?.country
+                ? query.country.split(",").includes(n.slug)
+                : false,
             }))}
+            counter={
+              query?.country ? query.country.split(",").length : undefined
+            }
+            showClear
             onClear={() => {
+              setQuery((prev) => ({ ...prev, country: "" }));
               console.log("Clear all categories");
             }}
             onChange={(item, index) => {
-              console.log("Toggle category", item, index);
+              const current = query?.country || "";
+              const arr = current ? current.split(",") : [];
+              if (arr.includes(item.value)) {
+                // Nếu có rồi => xoá
+                arr.splice(arr.indexOf(item.value), 1);
+              } else {
+                // Nếu chưa có => thêm
+                arr.push(item.value);
+              }
+
+              const newCountry = arr.join(",");
+
+              setQuery((prev) => ({
+                ...prev,
+                country: newCountry,
+              }));
+
+              console.log("Updated category:", newCountry);
             }}
           />
         </div>

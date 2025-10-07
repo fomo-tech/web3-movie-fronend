@@ -1,59 +1,63 @@
 "use client";
 
+import React, { useEffect, useState, useRef } from "react";
 import FilterMovie from "@/components/shared/FilterMovie";
 import MovieItem from "@/components/ui/MovieItem";
-import { getMovies } from "@/services/movie";
-import {
-  Filter,
-  Movie,
-  MovieDetailResponse,
-  MovieResponse,
-} from "@/types/movie";
-import React, { useEffect, useState } from "react";
+import { searchMovies } from "@/services/movie";
+import { Filter, Movie, MovieResponse } from "@/types/movie";
+import { useDebounceEffect } from "@/hooks/useDebounceEffect";
+import Pagination from "@/components/shared/Pagination";
+import { set } from "react-hook-form";
 
 interface CatalogProps {
   movies: Movie[];
+  totalPagesInit: number;
 }
-const Catalog = ({ movies }: CatalogProps) => {
-  const [slug, setSlug] = useState<{
-    label: string;
-    value: string;
-  }>({
-    label: "",
-    value: "",
-  });
+
+const Catalog = ({ movies, totalPagesInit }: CatalogProps) => {
+  const [slug, setSlug] = useState({ label: "", value: "" });
   const [dataMovies, setDataMovies] = useState<Movie[]>(movies);
-
-  const [query, setQuery] = useState<Filter>({
-    limit: 14,
+  const [totalPages, setTotalPages] = useState(totalPagesInit || 1);
+  const [query, setQuery] = useState<Filter & { keyword?: string }>({
+    limit: 28,
     page: 1,
+    sort_field: "modified",
+    sort_type: "desc",
   });
 
-  const getMoviesFilter = async () => {
-    try {
-      const data = await getMovies<MovieResponse>(slug.value, {
-        ...query,
-      });
+  // ✅ Dùng ref để bỏ qua lần chạy đầu tiên (mount)
+  const isFirstRender = useRef(true);
 
-      if (data) {
-        setDataMovies(data.items);
+  useDebounceEffect(
+    () => {
+      if (isFirstRender.current) {
+        isFirstRender.current = false;
+        return;
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
-  useEffect(() => {
-    if (slug || query.page !== 1) {
-      getMoviesFilter();
-    }
-  }, [slug, query]);
+      const fetchMovies = async () => {
+        try {
+          const data = await searchMovies<MovieResponse>(query);
+          if (data) {
+            setDataMovies(data.items);
+            setTotalPages(Math.ceil(data.params.pagination.totalItems / 24));
+          }
+        } catch (error) {
+          console.error("Error fetching movies:", error);
+        }
+      };
+
+      fetchMovies();
+    },
+    [query],
+    500 // delay 500ms
+  );
 
   return (
     <div className="section section--bb">
       <div className="max-w-90 mx-auto">
         <div className="row">
-          {/* filter */}
+          {/* Filter */}
           <div className="col-12">
             <FilterMovie
               query={query}
@@ -62,125 +66,29 @@ const Catalog = ({ movies }: CatalogProps) => {
               slug={slug}
             />
           </div>
-          {/* end filter */}
-          {/* grid */}
+
+          {/* Grid */}
           <div className="col-12">
             <div className="grid grid--catalog">
-              {/* item */}
-              {dataMovies.map((movie, idx) => {
-                return <MovieItem movie={movie} key={idx} />;
-              })}
-
-              {/* end item */}
+              {dataMovies.map((movie, idx) => (
+                <MovieItem movie={movie} key={idx} />
+              ))}
             </div>
           </div>
-
-          {/* end grid */}
         </div>
+
+        {/* Paginator */}
         <div className="row">
-          {/* paginator */}
           <div className="col-12">
-            {/* paginator mobile */}
-            <div className="paginator-mob">
-              <span className="paginator-mob__pages">18 of 1713</span>
-              <ul className="paginator-mob__nav">
-                <li>
-                  <a href="catalog1.html#">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M15 6l-6 6l6 6" />
-                    </svg>
-                    <span>Prev</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="catalog1.html#">
-                    <span>Next</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 6l6 6l-6 6" />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            {/* end paginator mobile */}
-            {/* paginator desktop */}
-            <ul className="paginator">
-              <li className="paginator__item paginator__item--prev">
-                <a href="catalog1.html#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M15 6l-6 6l6 6" />
-                  </svg>
-                </a>
-              </li>
-              <li className="paginator__item">
-                <a href="catalog1.html#">1</a>
-              </li>
-              <li className="paginator__item paginator__item--active">
-                <a href="catalog1.html#">2</a>
-              </li>
-              <li className="paginator__item">
-                <a href="catalog1.html#">3</a>
-              </li>
-              <li className="paginator__item">
-                <a href="catalog1.html#">4</a>
-              </li>
-              <li className="paginator__item">
-                <span>...</span>
-              </li>
-              <li className="paginator__item">
-                <a href="catalog1.html#">87</a>
-              </li>
-              <li className="paginator__item paginator__item--next">
-                <a href="catalog1.html#">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M9 6l6 6l-6 6" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-            {/* end paginator desktop */}
+            {/* paginator desktop (ví dụ, bạn có thể refactor thêm sau) */}
+            <Pagination
+              currentPage={query.page || 1}
+              totalPages={totalPages}
+              onChange={(p) => {
+                setQuery((prev) => ({ ...prev, page: p }));
+              }}
+            />
           </div>
-          {/* end paginator */}
         </div>
       </div>
     </div>

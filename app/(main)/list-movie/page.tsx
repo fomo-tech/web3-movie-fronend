@@ -3,12 +3,12 @@ import FilterMovie from "@/components/shared/FilterMovie";
 import { ROUTES } from "@/routes";
 import React from "react";
 import Catalog from "./components/Catalog";
-import { getMovies } from "@/services/movie";
+import { getMovies, searchMovies } from "@/services/movie";
 import { MovieResponse } from "@/types/movie";
 import { Metadata } from "next";
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const data = await getMovies<MovieResponse>("phim-moi", {
+  const data = await searchMovies<MovieResponse>({
     limit: 1,
   });
 
@@ -25,7 +25,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const ListMovies = async () => {
   const data = await getMovies<MovieResponse>("phim-moi", {
-    limit: 14,
+    limit: 28,
     page: 1,
   });
 
@@ -62,7 +62,10 @@ const ListMovies = async () => {
         </div>
       </section>
       {/* catalog*/}
-      <Catalog movies={data.items || []} />
+      <Catalog
+        movies={data.items || []}
+        totalPagesInit={Math.ceil(data.params.pagination.totalItems / 24)}
+      />
     </>
   );
 };

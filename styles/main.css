@@ -4883,7 +4883,7 @@ svg {
   .paginator__item {
     margin-right: 16px;
   }
-  .paginator__item a,
+  .paginator__item button,
   .paginator__item span {
     display: flex;
     flex-direction: row;
@@ -4904,10 +4904,10 @@ svg {
   .paginator__item:last-child {
     margin-right: 0;
   }
-  .paginator__item:hover a {
+  .paginator__item:hover button {
     color: #e84142;
   }
-  .paginator__item:hover a svg {
+  .paginator__item:hover button svg {
     stroke: #e84142;
   }
   .paginator__item--prev svg,
@@ -4922,7 +4922,7 @@ svg {
   .paginator__item--next svg {
     padding-left: 1px;
   }
-  .paginator__item--active a {
+  .paginator__item--active button {
     color: #e84142;
     cursor: default;
     font-weight: 600;

@@ -20,6 +20,7 @@ const MovieItem: React.FC<MovieItemProps> = ({ movie, isNew }) => {
           alt={movie.origin_name}
           quality={100}
           style={{ objectFit: "cover" }}
+          loading="lazy"
         />
 
         <Link

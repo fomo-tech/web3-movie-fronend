@@ -3,6 +3,7 @@
 import React, { ReactNode, useRef, useState } from "react";
 import clsx from "clsx";
 import { useClickOutside } from "@/hooks/useClickOutside";
+import { on } from "events";
 
 type DropdownType = "checkboxes" | "list";
 
@@ -17,6 +18,7 @@ interface FilterDropdownProps {
   id: string;
   counter?: number;
   label: ReactNode | string;
+  labelSelected?: string;
   icon?: React.ReactNode;
   type?: DropdownType;
   items: DropdownItem[];
@@ -35,6 +37,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   onClear,
   counter,
   onChange,
+  labelSelected,
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLElement>(null);
@@ -51,7 +54,9 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       })}
     >
       <button
-        className={clsx("filter__btn")}
+        className={clsx("filter__btn", {
+          active: counter && counter > 0,
+        })}
         type="button"
         id={id}
         onClick={toggle}
@@ -59,6 +64,27 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       >
         {icon && <span className="filter__btn-icon">{icon}</span>}
         {counter && <span className="filter__btn-counter">{counter}</span>}
+        {counter && counter > 0 && labelSelected && (
+          <span className="filter__btn-mask">
+            <span className="filter__btn-title">{labelSelected}</span>
+            <span className="filter__btn-clear" onClick={() => onClear?.()}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+                fill="none"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </span>
+          </span>
+        )}
+
         <span className="filter__btn-name">{label}</span>
         <span className="filter__btn-arrow">
           <svg
