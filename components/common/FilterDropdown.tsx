@@ -40,7 +40,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   labelSelected,
 }) => {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const toggle = () => setOpen((prev) => !prev);
   const close = () => setOpen(false);
 

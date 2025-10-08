@@ -23,7 +23,7 @@ const CatalogSection = ({
       <div className="section section--bb">
         <div className="container">
           <div className="row">
-            {showFilter && <FilterMovie />}
+            {/* {showFilter && <FilterMovie />} */}
 
             {/* grid */}
             <div className="col-12">
@@ -40,9 +40,9 @@ const CatalogSection = ({
           <div className="row">
             {/* paginator */}
             <div className="col-12">
-              {showPagination && (
+              {/* {showPagination && (
                 <Pagination currentPage={10} totalPages={100} />
-              )}
+              )} */}
             </div>
             {/* end paginator */}
           </div>

@@ -1,4 +1,3 @@
-import CatalogSection from "@/components/sections/CatalogSection";
 import HeroSection from "@/components/sections/HeroSection";
 import MoviesToday from "@/components/sections/MovieToday";
 import {
