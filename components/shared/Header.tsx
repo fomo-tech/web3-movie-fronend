@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
 import logo from "@/img/logo/logo.png";
 import usdt from "@/img/currencies/usdt.svg";
+import { useApp } from "@/store/useApp";
+import Link from "next/link";
 
 const Header = () => {
+  const { isShowSearchPopup, toggleSearchPopup } = useApp();
   return (
     <>
       {/* header */}
@@ -14,12 +19,16 @@ const Header = () => {
             <div className="col-12">
               <div className="header__content">
                 {/* logo */}
-                <a href="index.html" className="header__logo">
-                  <Image src={logo} alt="" />
-                </a>
+                <Link href="/" className="header__logo">
+                  <Image src={logo} alt="Logo Flix Movie" />
+                </Link>
                 {/* end logo */}
                 {/* search btn */}
-                <button className="header__search" type="button">
+                <button
+                  className="header__search"
+                  type="button"
+                  onClick={() => toggleSearchPopup()}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}

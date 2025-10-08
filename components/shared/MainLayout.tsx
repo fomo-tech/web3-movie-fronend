@@ -6,6 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Category, National } from "@/types/movie";
 import { useMovie } from "@/store/useMovie";
+import SearchPopup from "../ui/SearchPopup";
 
 interface MainLayoutProps {
   children?: React.ReactNode;
@@ -27,6 +28,7 @@ const MainLayout = ({
   return (
     <>
       <Sidebar />
+      <SearchPopup />
       <main className="main">
         <Header />
         <div className="main__content">
