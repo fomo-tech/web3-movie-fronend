@@ -25,7 +25,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 const ListMovies = async () => {
   const data = await getMovies<MovieResponse>("phim-moi", {
-    limit: 28,
+    limit: 24,
     page: 1,
   });
 
@@ -63,6 +63,7 @@ const ListMovies = async () => {
       </section>
       {/* catalog*/}
       <Catalog
+        apiType="searchMovies"
         movies={data.items || []}
         totalPagesInit={Math.ceil(data.params.pagination.totalItems / 24)}
       />

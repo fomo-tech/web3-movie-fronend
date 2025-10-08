@@ -1,21 +1,27 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import FilterMovie from "@/components/shared/FilterMovie";
 import MovieItem from "@/components/ui/MovieItem";
-import { searchMovies } from "@/services/movie";
-import { Filter, Movie, MovieResponse } from "@/types/movie";
-import { useDebounceEffect } from "@/hooks/useDebounceEffect";
 import Pagination from "@/components/shared/Pagination";
-import { set } from "react-hook-form";
+import { useDebounceEffect } from "@/hooks/useDebounceEffect";
+import { getMovies, searchMovies } from "@/services/movie";
+import { Filter, Movie, MovieResponse } from "@/types/movie";
 
 interface CatalogProps {
+  apiType: "getMovies" | "searchMovies" | "topRated"; // thêm các loại khác nếu cần
+  slug?: string;
   movies: Movie[];
   totalPagesInit: number;
 }
 
-const Catalog = ({ movies, totalPagesInit }: CatalogProps) => {
-  const [slug, setSlug] = useState({ label: "", value: "" });
+const Catalog: React.FC<CatalogProps> = ({
+  apiType,
+  slug,
+  movies,
+  totalPagesInit,
+}) => {
+  const [slugState, setSlugState] = useState({ label: "", value: slug || "" });
   const [dataMovies, setDataMovies] = useState<Movie[]>(movies);
   const [totalPages, setTotalPages] = useState(totalPagesInit || 1);
   const [query, setQuery] = useState<Filter & { keyword?: string }>({
@@ -25,7 +31,6 @@ const Catalog = ({ movies, totalPagesInit }: CatalogProps) => {
     sort_type: "desc",
   });
 
-  // ✅ Dùng ref để bỏ qua lần chạy đầu tiên (mount)
   const isFirstRender = useRef(true);
 
   useDebounceEffect(
@@ -35,39 +40,52 @@ const Catalog = ({ movies, totalPagesInit }: CatalogProps) => {
         return;
       }
 
-      const fetchMovies = async () => {
+      const fetchData = async () => {
         try {
-          const data = await searchMovies<MovieResponse>(query);
+          let data: MovieResponse | null = null;
+
+          switch (apiType) {
+            case "getMovies":
+              data = await getMovies<MovieResponse>(slug || "", query);
+              break;
+            case "searchMovies":
+              data = await searchMovies<MovieResponse>(query);
+              break;
+
+            default:
+              throw new Error(`Unknown apiType: ${apiType}`);
+          }
+
           if (data) {
             setDataMovies(data.items);
-            setTotalPages(Math.ceil(data.params.pagination.totalItems / 24));
+            setTotalPages(
+              Math.ceil(data.params.pagination.totalItems / (query.limit || 24))
+            );
           }
         } catch (error) {
           console.error("Error fetching movies:", error);
         }
       };
 
-      fetchMovies();
+      fetchData();
     },
     [query],
-    500 // delay 500ms
+    500
   );
 
   return (
     <div className="section section--bb">
       <div className="max-w-90 mx-auto">
         <div className="row">
-          {/* Filter */}
           <div className="col-12">
             <FilterMovie
               query={query}
               setQuery={setQuery}
-              setSlug={setSlug}
-              slug={slug}
+              setSlug={setSlugState}
+              slug={slugState}
             />
           </div>
 
-          {/* Grid */}
           <div className="col-12">
             <div className="grid grid--catalog">
               {dataMovies.map((movie, idx) => (
@@ -77,16 +95,12 @@ const Catalog = ({ movies, totalPagesInit }: CatalogProps) => {
           </div>
         </div>
 
-        {/* Paginator */}
         <div className="row">
           <div className="col-12">
-            {/* paginator desktop (ví dụ, bạn có thể refactor thêm sau) */}
             <Pagination
               currentPage={query.page || 1}
               totalPages={totalPages}
-              onChange={(p) => {
-                setQuery((prev) => ({ ...prev, page: p }));
-              }}
+              onChange={(p) => setQuery((prev) => ({ ...prev, page: p }))}
             />
           </div>
         </div>

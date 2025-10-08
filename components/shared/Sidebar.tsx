@@ -7,8 +7,11 @@ import Link from "next/link";
 import { ROUTES } from "@/routes";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import { useMovie } from "@/store/useMovie";
 const Sidebar = () => {
   const pathname = usePathname();
+  const [showCategories, setShowCategories] = React.useState(false);
+  const { listMovie } = useMovie();
   return (
     <>
       {/* sidebar */}
@@ -40,7 +43,7 @@ const Sidebar = () => {
                     <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
                     <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
                   </svg>
-                  <span>Home</span>
+                  <span>Trang chủ</span>
                 </Link>
               </li>
               <li className={clsx({ active: pathname === ROUTES.movies })}>
@@ -65,7 +68,7 @@ const Sidebar = () => {
                     <path d="M16 8l4 0" />
                     <path d="M16 16l4 0" />
                   </svg>
-                  <span>Movies</span>
+                  <span>Phim</span>
                   {/* <p>25 947</p> */}
                 </Link>
               </li>
@@ -110,12 +113,15 @@ const Sidebar = () => {
               </li>
               <li>
                 <button
-                  className="sidebar__collapsed collapsed"
+                  className={clsx("sidebar__collapsed", {
+                    collapsed: !showCategories,
+                  })}
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapse-menu0"
-                  aria-expanded="false"
+                  aria-expanded={showCategories ? "true" : "false"}
                   aria-controls="collapse-menu0"
+                  onClick={() => setShowCategories(!showCategories)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +139,7 @@ const Sidebar = () => {
                     <path d="M4 14h6v6h-6z" />
                     <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
                   </svg>
-                  <span>Categories</span>
+                  <span>Danh sách</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={24}
@@ -152,116 +158,20 @@ const Sidebar = () => {
               <li>
                 <ul
                   id="collapse-menu0"
-                  className="sidebar__nav sidebar__nav--collapse collapse"
+                  className={clsx(
+                    "sidebar__nav sidebar__nav--collapse collapse",
+                    { show: showCategories }
+                  )}
                 >
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Action</span>
-                      <p>462</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Adventure</span>
-                      <p>1 204</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Animation</span>
-                      <p>89</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Biography</span>
-                      <p>103</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Comedy</span>
-                      <p>2 094</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Documentary</span>
-                      <p>923</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Drama</span>
-                      <p>781</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Education</span>
-                      <p>62</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Fantasy</span>
-                      <p>803</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>History</span>
-                      <p>1 942</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Horror</span>
-                      <p>693</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Kids</span>
-                      <p>105</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Military/War</span>
-                      <p>1 931</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Mystery/Crime</span>
-                      <p>2 056</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Politics</span>
-                      <p>705</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Romance</span>
-                      <p>1 684</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Sci-Fi</span>
-                      <p>558</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="catalog1.html">
-                      <span>Western</span>
-                      <p>726</p>
-                    </a>
-                  </li>
+                  {listMovie.length > 0 &&
+                    listMovie.map((l) => (
+                      <li key={l.id}>
+                        <Link href={`/list-movie/${l.slug}`}>
+                          <span>{l.name}</span>
+                          {/* <p>{category.movieCount}</p> */}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               </li>
               <li>
