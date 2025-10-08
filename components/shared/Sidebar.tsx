@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import logo from "@/img/logo.svg";
+import logo from "@/img/logo/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { ROUTES } from "@/routes";
@@ -18,9 +18,9 @@ const Sidebar = () => {
       <div className="sidebar">
         <div className="sidebar__head">
           {/* logo */}
-          <a href="index.html" className="sidebar__logo">
+          <Link href="/" className="sidebar__logo">
             <Image src={logo} alt="" />
-          </a>
+          </Link>
           {/* end logo */}
         </div>
         <div className="sidebar__content">

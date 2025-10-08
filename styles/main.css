@@ -221,7 +221,7 @@ svg {
 }
 .header__logo img {
   width: auto;
-  height: 24px;
+  /* height: 24px; */
   display: block;
 }
 .header__search {
@@ -1163,7 +1163,7 @@ svg {
   }
   .sidebar__logo img {
     width: auto;
-    height: 24px;
+    /* height: 24px; */
     display: block;
   }
 }
