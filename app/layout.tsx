@@ -7,6 +7,7 @@ import "swiper/css";
 import "@/styles/custom.css";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,17 @@ export default function RootLayout({
         >
           {children}
         </GoogleOAuthProvider>
+        <NextTopLoader
+          color="#e84142"
+          initialPosition={0.1}
+          crawlSpeed={300}
+          height={4}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={400}
+          shadow="0 0 10px #fe4f70,0 0 5px #fe4f70"
+        />
       </body>
     </html>
   );
